@@ -69,6 +69,16 @@ function fahrenheitToKelvin(tempFarenheit) {
 // arguments and returns the lesser of them. This function should
 // use an if/else statement.
 
+function lesser(x, y) {
+    if (x < y) {
+        return x
+    } else if (x > y) {
+        return y
+    } else {
+        return 'equal'
+    }
+}
+
 // 9. Create a function called multigreeting that takes a name
 // and a language code and returns a version of "Hello, <name>!"
 // in the specified language. The supported languages and their
@@ -81,14 +91,51 @@ function fahrenheitToKelvin(tempFarenheit) {
 //
 // If any other language code is used, return nothing.
 
+function multigreeting(name, lang) {
+    if (lang === "en") {
+        return `Hello, ${name}!`
+    } else if (lang === "es") {
+        return `¡Hola, ${name}!`
+    } else if (lang === "fr") {
+        return `Bonjour, ${name}!`
+    } else if (lang === "eo") {
+        return `Saluton, ${name}!`
+    } else {
+        return undefined
+    }
+}
+
 // 10. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
 
+function sum(numbers) {
+    if (numbers.length === 0) {
+        return 0
+    } else {
+        return numbers.reduce((x, y) => x + y)
+    }
+}
+
 // 11. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+function average(numbers) {
+    if (numbers.length === 0) {
+        return undefined
+    } else {
+        return (numbers.reduce((x, y) => x + y) / numbers.length)
+    }
+}
 
 // 12. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+// ... is a spread operator and allows our array to be expanded since min method can't take arrays
+function minimum(numbers) {
+    if (numbers.length === 0) {
+        return undefined
+    } else {
+        return Math.min(...numbers)
+    }
+}
 
 // 13. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -113,3 +160,15 @@ function fahrenheitToKelvin(tempFarenheit) {
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
+
+function selectionSort(numbers) {
+    if (numbers.length === 0) {
+        return []
+    } else if (numbers.length === 1) {
+        return Numbers
+    } else {
+    return Numbers.sort((x, y) => x-y)
+    }
+}
+
+
