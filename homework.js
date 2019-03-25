@@ -161,14 +161,32 @@ function minimum(numbers) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
+// This doesn't work because I'm not removing anything from numbers so the length is ALWAYS above 0 and just keeps looping (crashes the page)
+// function selectionSort(numbers) {
+//     if (numbers.length === 0) {
+//         return []
+//     } else {
+//     sortedNumbers = []
+//     while (numbers.length > 0) {
+//         let minNum = minimum(numbers)
+//         sortedNumbers.push(minNum)
+//     }
+//     }
+//     return sortedNumbers
+// }
+
 function selectionSort(numbers) {
-    if (numbers.length === 0) {
-        return []
-    } else if (numbers.length === 1) {
-        return Numbers
+    if (numbers.length <= 1) {
+        return numbers
     } else {
-    return Numbers.sort((x, y) => x-y)
+    numbers = numbers.slice(0)
+    let sortedNumbers = []
+    while (numbers.length > 0) {
+        let minNum = minimum(numbers)
+        let minIndex = numbers.indexOf(minNum)
+        numbers.splice(minIndex, 1) // so removing the value from the same index of the min number and only deleting 1
+        sortedNumbers.push(minNum)
+        }
     }
+    return sortedNumbers
 }
-
-
