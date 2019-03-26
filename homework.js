@@ -176,17 +176,16 @@ function minimum(numbers) {
 // }
 
 function selectionSort(numbers) {
-    if (numbers.length <= 1) {
-        return numbers
-    } else {
+    // if (numbers.length <= 1) {
+    //     return numbers
+    // } else {
     numbers = numbers.slice(0)
-    let sortedNumbers = []
+    const sortedNumbers = []
     while (numbers.length > 0) {
         let minNum = minimum(numbers)
         let minIndex = numbers.indexOf(minNum)
         numbers.splice(minIndex, 1) // so removing the value from the same index of the min number and only deleting 1
         sortedNumbers.push(minNum)
         }
-    }
     return sortedNumbers
 }
